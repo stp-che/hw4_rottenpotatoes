@@ -58,4 +58,10 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+  def similars_by_director
+    @movie = Movie.find params[:id]
+    redirect_to movies_path and return if @movie.director.blank?
+    @movies = @movie.similars_by_director
+  end
+
 end
