@@ -6,7 +6,7 @@ describe MoviesController do
 
     before :each do
       @movie = mock("mov", :director => "Ingmar Bergman", :similars_by_director => nil) 
-      @mov_without_director = mock "mov1", :director => nil
+      @mov_without_director = mock "mov1", :title => 'Pulp Fiction', :director => nil
     end
 
     it "should find Movie with specified id" do
